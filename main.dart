@@ -22,8 +22,7 @@ void main() {
             print("Name the planet you would like to visit:\n${system.planets.keys}");
             break;
     }
-    print("Traveling to Earth");
-    print("The shattered remains of this former planet can be found drifting through space, or in souvenir shops around the galaxy.");
+    visitPlanet(system, "Earth");
 }
 
 System parseJSON(final String filepath) {
@@ -39,9 +38,14 @@ System parseJSON(final String filepath) {
 }
 
 String getValidInput(List<String> validInputs) {
-    String input = stdin.readLineSync();
+    final input = stdin.readLineSync();
     if (validInputs.contains(input)) return input;
     
     print("I'm sorry, I don't understand.");
     return getValidInput(validInputs);
+}
+
+void visitPlanet(System system, String planet) {
+    print("Traveling to ${planet}..");
+    print(system.planets[planet]);
 }

@@ -11,17 +11,15 @@ void main() {
     print("Welcome to the ${system.name}");
     print("There are ${system.planets.length} planets to explore.");
     print("What is your name?");
-    final name = stdin.readLineSync();
-    print("Nice to meet you, ${name}.");
+    print("Nice to meet you, ${stdin.readLineSync()}.");
     print("Let's go on an adventure.");
     print("Shall I randomly choose a planet for you? (Y / N)");
-    final randomChoice = getValidInput(['Y', 'N']);
-    switch (randomChoice) {
+    switch (getValidInput(['Y', 'N'])) {
         case 'Y':
             print("Traveling..");
             break;
         case 'N':
-            print("Name the planet you would like to visit");
+            print("Name the planet you would like to visit:\n${system.planets.keys}");
             break;
     }
     print("Traveling to Earth");

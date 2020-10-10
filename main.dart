@@ -1,18 +1,14 @@
 import 'dart:io';
 import 'dart:convert';
 
-class Planet {
-    String name;
-    String description;
-}
-
 class System {
     String name;
-    List<Planet> planets = new List<Planet>();
+    Map planets = new Map();
 }
 
 void main() {
     final System system = parseJSON('planetarySystem.json');
+    print(system.planets.keys);
     print("Welcome to the ${system.name}");
     print("There are ${system.planets.length} planets to explore.");
     print("What is your name?");
@@ -39,13 +35,8 @@ System parseJSON(final String filepath) {
 
     System system = new System();
     system.name = data["name"];
-    for (var i = 0; i < planets.length; ++i) {
-        Planet planet = new Planet();
-        planet.name = planets[i]["name"];
-        planet.description = planets[i]["description"];
-
-        system.planets.add(planet);
-    }
+    for (var i = 0; i < planets.length; ++i)
+        system.planets[planets[i]["name"]] = planets[i]["description"];
     
     return system;
 }

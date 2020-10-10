@@ -1,5 +1,6 @@
 import 'dart:io';
 import 'dart:convert';
+import 'dart:math';
 
 class System {
     String name;
@@ -8,6 +9,7 @@ class System {
 
 void main() {
     final System system = parseJSON('planetarySystem.json');
+
     print("Welcome to the ${system.name}");
     print("There are ${system.planets.length} planets to explore.");
     print("What is your name?");
@@ -16,13 +18,14 @@ void main() {
     print("Shall I randomly choose a planet for you? (Y / N)");
     switch (getValidInput(['Y', 'N'])) {
         case 'Y':
-            print("Traveling..");
+            final planet = system.planets.keys.toList()[new Random().nextInt(system.planets.length)];
+            visitPlanet(system, planet);
             break;
         case 'N':
             print("Name the planet you would like to visit:\n${system.planets.keys}");
+            visitPlanet(system, getValidInput(system.planets.keys.toList()));
             break;
     }
-    visitPlanet(system, "Earth");
 }
 
 System parseJSON(final String filepath) {
@@ -37,7 +40,7 @@ System parseJSON(final String filepath) {
     return system;
 }
 
-String getValidInput(List<String> validInputs) {
+String getValidInput(final List<dynamic> validInputs) {
     final input = stdin.readLineSync();
     if (validInputs.contains(input)) return input;
     
@@ -45,7 +48,8 @@ String getValidInput(List<String> validInputs) {
     return getValidInput(validInputs);
 }
 
-void visitPlanet(System system, String planet) {
+void visitPlanet(final System system, final String planet) {
     print("Traveling to ${planet}..");
+    sleep(new Duration(seconds: 1));
     print(system.planets[planet]);
 }

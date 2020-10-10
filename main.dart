@@ -8,15 +8,14 @@ class System {
 
 void main() {
     final System system = parseJSON('planetarySystem.json');
-    print(system.planets.keys);
     print("Welcome to the ${system.name}");
     print("There are ${system.planets.length} planets to explore.");
     print("What is your name?");
-    String name = stdin.readLineSync();
+    final name = stdin.readLineSync();
     print("Nice to meet you, ${name}.");
     print("Let's go on an adventure.");
     print("Shall I randomly choose a planet for you? (Y / N)");
-    String randomChoice = getValidInput(['Y', 'N']);
+    final randomChoice = getValidInput(['Y', 'N']);
     switch (randomChoice) {
         case 'Y':
             print("Traveling..");

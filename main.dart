@@ -1,8 +1,11 @@
+import 'dart:io';
+
 void main() {
     print("Welcome to the Solar System");
     print("There are 9 planets to explore.");
     print("What is your name?");
-    print("Nice to meet you, .");
+    String name = stdin.readLineSync();
+    print("Nice to meet you, ${name}.");
     print("Let's go on an adventure.");
     print("Shall I randomly choose a planet for you? (Y / N)");
     print("Name the planet you would like to visit.");

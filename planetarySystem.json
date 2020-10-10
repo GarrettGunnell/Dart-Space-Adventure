@@ -3,39 +3,39 @@
     "planets": [
         {
             "name": "Mercury",
-            "description": "A very hot planet, closest to the sun."
+            "description": "This industrial powerhouse produced the majority of goods for the system, before the Sun absorbed it at least."
         },
         {
             "name": "Venus",
-            "description": "It's very cloudy here!"
+            "description": "Initially thought to be a tropical paradise, this planet is quite the opposite."
         },
         {
             "name": "Earth",
-            "description": "There is something very familiar about this planet."
+            "description": "The shattered remains of this former planet can be found drifting through space, or in souvenir shops around the galaxy."
         },
         {
             "name": "Mars",
-            "description": "Known as the red planet."
+            "description": "It wasn't until the Humans colonized Mars that they experienced their mutually assured destruction doctrines."
         },
         {
             "name": "Jupiter",
-            "description": "A gas giant, with a noticeable red spot."
+            "description": "A few survivalists thought they could endure Jupiter's surface. No one has tried since."
         },
         {
             "name": "Saturn",
-            "description": "This planet has beautiful rings around it."
+            "description": "Scientists were disappointed to see their probe go in one side and out the other. There's no surface on this planet."
         },
         {
             "name": "Uranus",
-            "description": "Strangely, this planet rotates around on its side."
+            "description": "The cold temperatures on this planet are nothing compared to the monsters lurking in the depths."
         },
         {
             "name": "Neptune",
-            "description": "A very cold planet, furthest from the sun."
+            "description": "With the growing Sun, the ice here is beginning to melt."
         },
         {
             "name": "Pluto",
-            "description": "I don't care what they say - it's a planet."
+            "description": "This isn't a planet."
         }
     ]
 }

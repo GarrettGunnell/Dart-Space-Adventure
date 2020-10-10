@@ -12,9 +12,9 @@ class System {
 }
 
 void main() {
-    final System planets = parseJSON('planetarySystem.json');
-    print("Welcome to the Solar System");
-    print("There are 9 planets to explore.");
+    final System system = parseJSON('planetarySystem.json');
+    print("Welcome to the ${system.name}");
+    print("There are ${system.planets.length} planets to explore.");
     print("What is your name?");
     String name = stdin.readLineSync();
     print("Nice to meet you, ${name}.");

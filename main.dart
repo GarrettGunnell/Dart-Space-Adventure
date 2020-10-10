@@ -8,7 +8,7 @@ void main() {
     print("Nice to meet you, ${name}.");
     print("Let's go on an adventure.");
     print("Shall I randomly choose a planet for you? (Y / N)");
-    String randomChoice = stdin.readLineSync();
+    String randomChoice = getValidInput(['Y', 'N']);
     switch (randomChoice) {
         case 'Y':
             print("Traveling..");
@@ -19,4 +19,12 @@ void main() {
     }
     print("Traveling to Earth");
     print("The shattered remains of this former planet can be found drifting through space, or in souvenir shops around the galaxy.");
+}
+
+String getValidInput(List<String> validInputs) {
+    String input = stdin.readLineSync();
+    if (validInputs.contains(input)) return input;
+    
+    print("I'm sorry, I don't understand.");
+    return getValidInput(validInputs);
 }
